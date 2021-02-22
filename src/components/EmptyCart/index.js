@@ -1,12 +1,21 @@
 import React from 'react';
-import FeatherIcon from 'react-native-vector-icons/Feather';
+import LottieView from 'lottie-react-native';
 
-import { Container, EmptyCartText } from './styles';
+import empytCartAnimation from '../../../empty-cart.json';
+
+import { Container, EmptyCartText, EmptyCartContainer } from './styles';
 
 export default function EmptyCart(){
   return(
     <Container>
-      <FeatherIcon name="slash" size={32} color="#f3f9ff"/>
+      <EmptyCartContainer>
+        <LottieView
+          source={empytCartAnimation}
+          resizeMode="contain"
+          autoPlay
+          loop
+        />
+      </EmptyCartContainer>
       <EmptyCartText>Seu carrinho está vazio.</EmptyCartText>
     </Container>
   )
